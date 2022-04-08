@@ -1,7 +1,7 @@
-NAME	= main
+NAME	= convert
 
-SRC		= main.cpp Animal.cpp WrongAnimal.cpp Dog.cpp Cat.cpp WrongCat.cpp Brain.cpp
-INC		= Animal.hpp WrongAnimal.hpp Dog.hpp Cat.hpp WrongCat.hpp Brain.hpp
+SRC		= main.cpp
+INC		= whatever.hpp
 OBJ		= $(SRC:.cpp=.o)
 
 CC		= c++
@@ -12,10 +12,10 @@ RM		= rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJ) Makefile
+$(NAME): $(OBJ) Makefile $(INC)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ): %.o: %.cpp $(INC)
+$(OBJ): %.o: %.cpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:
