@@ -13,6 +13,7 @@ class WrongCat : public WrongAnimal
 		WrongCat	const &operator=( WrongCat const &other );
 
 		void	makeSound( void ) const;
+		Brain	*getBrain( void ) const;
 };
 
 #endif
